@@ -1,1 +1,1 @@
-CrudRouter for beanie odm
+CrudRouter for beanie odm based on fastapi_crudrouter

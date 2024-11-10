@@ -4,7 +4,7 @@ from fastapi_crudrouter.core import CRUDGenerator, NOT_FOUND
 from fastapi_crudrouter.core._types import DEPENDENCIES, PAGINATION, PYDANTIC_SCHEMA as SCHEMA
 
 try:
-    from beanie import Document
+    from beanie import Document as Model
 except ImportError:
     Model = None  # type: ignore
     beanie_installed = False
