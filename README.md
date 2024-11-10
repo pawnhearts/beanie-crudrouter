@@ -1,0 +1,1 @@
+CrudRouter for beanie odm

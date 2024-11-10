@@ -97,10 +97,13 @@ async def login(response: Response, user_auth: UserAuth) -> SessionData:
     data = SessionData(email=user.email, role=user.role, login=user.login)
     await backend.create(session, data)
     cookie.attach_to_response(response, session)
+    user: SessionData = Depends(verifier),
     return data
 
 
 def has_permission(model, action):
-    def has_permissionfo(user: SessionData = Depends(verifier), obj=None):
+    def has_permissiom_for(user: SessionData = Depends(verifier), obj=None):
         if not user:
             raise HTTPException(status_code=403, detail="Access Denied")
+
+    return has_permissiom_for
